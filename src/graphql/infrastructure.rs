@@ -1,5 +1,5 @@
 use rocket::response::content;
-use rocket::State;
+use rocket::{State, Response};
 use juniper_rocket::{GraphQLResponse, GraphQLRequest};
 
 #[rocket::get("/")]
@@ -8,8 +8,8 @@ pub(crate) fn graphiql() -> content::Html<String> {
 }
 
 #[rocket::options("/graphql")]
-pub(crate) fn opt_graphql_handler() -> &'static str {
-    ""
+pub(crate) fn opt_graphql_handler() -> Response<'static> {
+    Response::new()
 }
 
 #[rocket::get("/graphql?<request>")]

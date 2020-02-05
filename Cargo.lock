@@ -42,6 +42,11 @@ version = "1.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "bytes"
+version = "0.5.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "c2-chacha"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -94,12 +99,16 @@ version = "0.1.0"
 dependencies = [
  "diesel 1.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "dotenv 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "http 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hyper 0.10.16 (registry+https://github.com/rust-lang/crates.io-index)",
  "juniper 0.14.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "juniper_rocket 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "r2d2 0.8.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "r2d2-diesel 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.7.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "rocket 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket_http 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "unicase 1.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -178,6 +187,16 @@ version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "libc 0.2.66 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "http"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "bytes 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "itoa 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -814,6 +833,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum base64 0.9.3 (registry+https://github.com/rust-lang/crates.io-index)" = "489d6c0ed21b11d038c31b6ceccca973e65d73ba3bd8ecb9a2babf5546164643"
 "checksum bitflags 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
 "checksum byteorder 1.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a7c3dd8985a7111efc5c80b44e23ecdd8c007de8ade3b96595387e812b957cf5"
+"checksum bytes 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)" = "130aac562c0dd69c56b3b1cc8ffd2e17be31d0b6c25b61c96b76231aa23e39e1"
 "checksum c2-chacha 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "214238caa1bf3a496ec3392968969cab8549f96ff30652c9e56885329315f6bb"
 "checksum cc 1.0.48 (registry+https://github.com/rust-lang/crates.io-index)" = "f52a465a666ca3d838ebbf08b241383421412fe7ebb463527bba275526d89f76"
 "checksum cfg-if 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
@@ -829,6 +849,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)" = "2fad85553e09a6f881f739c29f0b00b0f01357c743266d478b68951ce23285f3"
 "checksum getrandom 0.1.14 (registry+https://github.com/rust-lang/crates.io-index)" = "7abc8dd8451921606d809ba32e95b6111925cd2906060d2dcc29c070220503eb"
 "checksum hermit-abi 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "f629dc602392d3ec14bfc8a09b5e644d7ffd725102b48b81e59f90f2633621d7"
+"checksum http 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b708cc7f06493459026f53b9a61a7a121a5d1ec6238dee58ea4941132b30156b"
 "checksum httparse 1.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "cd179ae861f0c2e53da70d892f5f3029f9594be0c41dc5269cd371691b1dc2f9"
 "checksum hyper 0.10.16 (registry+https://github.com/rust-lang/crates.io-index)" = "0a0652d9a2609a968c14be1a9ea00bf4b1d64e2e1f53a1b51b6fff3a6e829273"
 "checksum idna 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "38f09e0f0b1fb55fdee1f17470ad800da77af5186a1a76c026b679358b7e844e"

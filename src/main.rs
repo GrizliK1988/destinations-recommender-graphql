@@ -4,6 +4,11 @@
 extern crate diesel;
 extern crate dotenv;
 
+use rocket::fairing::AdHoc;
+use rocket_http::hyper::header::{ AccessControlAllowOrigin, AccessControlAllowHeaders, AccessControlAllowMethods, AccessControlMaxAge };
+use rocket_http::hyper::Method;
+use unicase::UniCase;
+
 mod graphql;
 mod context;
 mod query;
@@ -23,6 +28,18 @@ pub(crate) struct Photo {
 
 fn main() {
     rocket::ignite()
+        .attach(AdHoc::on_response("CORS", |_, res| {
+            res.set_header(AccessControlAllowOrigin::Any);
+            res.set_header(AccessControlAllowHeaders(vec![
+                UniCase("content-type".to_owned())
+            ]));
+            res.set_header(AccessControlAllowMethods(vec![
+                Method::Get,
+                Method::Post,
+                Method::Options,
+            ]));
+            res.set_header(AccessControlMaxAge(1728000u32));
+        }))
         .manage(context::create_context())
         .manage(Schema::new(query::Query, mutation::Mutation))
         .mount(
