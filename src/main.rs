@@ -3,6 +3,7 @@
 #[macro_use]
 extern crate diesel;
 extern crate dotenv;
+extern crate lazy_static;
 
 use rocket::fairing::AdHoc;
 use rocket_http::hyper::header::{ AccessControlAllowOrigin, AccessControlAllowHeaders, AccessControlAllowMethods, AccessControlMaxAge };
@@ -13,6 +14,7 @@ mod graphql;
 mod context;
 mod query;
 mod mutation;
+mod algebra;
 
 pub(crate) mod schema;
 
